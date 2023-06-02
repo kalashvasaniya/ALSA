@@ -5,6 +5,13 @@ let LocalStrategy = require("passport-local");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const cookieToken = require("../utils/cookieToken");
+const chargerloc = require("../models/charger");
+const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
+const user = require("../models/user");
+const geoCoder = mbxGeocoding({
+  accessToken:
+    "pk.eyJ1IjoiZGhhcmFuc2huZWVtYSIsImEiOiJjbGlmNDVyZzExNms2M2tuYmJ6a29rNTRtIn0.cjCinyijpfYRIsCRyqGgVg",
+});
 exports.home = async (req, res, next) => {
   res.render("index");
 };
@@ -59,5 +66,41 @@ exports.loginPOST = async (req, res, next) => {
   } catch (error) {
     console.log(error);
     res.status(404).render("error");
+  }
+};
+
+exports.requiredCharge = async (req, res, next) => {
+  try {
+    const result = await geoCoder
+      .forwardGeocode({
+        // query: "banswara, Rajasthan",
+        query: req.body.location,
+        limit: 1,
+      })
+      .send();
+    console.log(result.body.features[0].geometry.coordinates);
+  } catch (error) {
+    console.log(error);
+  }
+};
+exports.registerCharger = async (req, res, next) => {
+  try {
+    console.log(req.body);
+    const id = req.body.id;
+    const user = await User.findById(id);
+    const result = await geoCoder
+      .forwardGeocode({
+        query: req.body.location,
+        limit: 1,
+      })
+      .send();
+    const { type, coordinates } = result.body.features[0].geometry;
+    const newCharger = await chargerloc.create({
+      user: { id: user._id },
+      location: { type, coordinates },
+    });
+    res.send(newCharger);
+  } catch (error) {
+    console.log(error);
   }
 };
