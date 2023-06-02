@@ -5,8 +5,8 @@ let LocalStrategy = require("passport-local");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const cookieToken = require("../utils/cookieToken");
-exports.test = async (req, res, next) => {
-  res.send("test successfull");
+exports.home = async (req, res, next) => {
+  res.render("index");
 };
 exports.signup = async (req, res, next) => {
   try {
