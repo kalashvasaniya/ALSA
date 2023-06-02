@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <title>Map</title>
+</head>
+
+<body class="bg-black">
+
+
+    <!-- drawer init and show -->
+    <div class="flex justify-between md:px-28 p-5">
+        <nav class="text-center">
+            <button
+                class="flex items-start p-2 text-sm text-black hidden md:block rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </nav>
+        <div class="">
+            <button
+                class="flex items-center justify-center px-2 p-3 text-sm text-black rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+                aria-controls="drawer-navigation">
+                Nearest EV Station
+            </button>
+        </div>
+    </div>
+
+    <!-- drawer component -->
+    <div id="drawer-navigation"
+        class="fixed top-0 left-0 z-40 w-80 md:w-96 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-gray-800"
+        tabindex="-1" aria-labelledby="drawer-navigation-label">
+        <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">ALSA
+        </h5>
+        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+            class="text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center hover:bg-gray-600 hover:text-white">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Close menu</span>
+        </button>
+        <div class="py-4 overflow-y-auto">
+            <ul class="space-y-2 font-medium">
+                <hr>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <span class="ml-3">Q-854, Katpadi, Vellore, TamilNadu</span>
+                        <br>
+                        <span class="ml-5 text-sm underline underline-offset-4 text-blue-600">Price: 50$/30min</span>
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <span class="ml-3">A-19 Mahi Nagar, Jaipur, Rajasthan</span>
+                        <br>
+                        <span class="ml-5 text-sm underline underline-offset-4 text-blue-600">Price: 35$/20min</span>
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                        <span class="ml-3">Sector-8, Mumbai, Maharastra</span>
+                        <br>
+                        <span class="ml-5 text-sm underline underline-offset-4 text-blue-600">Price: 60$/50min</span>
+                    </a>
+                </li>
+                <hr>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container flex justify-between items-center px-6 mx-auto w-full mb-6">
+        <section class="w-full">
+            <div class="mt-6">
+
+                <!-- Tailblocks -->
+                <section class="text-gray-400 bg-slate-900 relative rounded-xl">
+                    <div class="container px-4 py-6 mx-auto">
+                        <div
+                            class="bg-slate-900 rounded-lg overflow-hidden py-72 flex items-end justify-start relative">
+                            <iframe width="100%" height="100%" title="map" class="absolute inset-0" frameborder="0"
+                                marginheight="100%" marginwidth="0" scrolling="no"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1405.9286297556164!2d79.15615230175196!3d12.967858584858714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad47a36f5b0d4b%3A0x983cad8ccde24f9e!2sVIT!5e0!3m2!1sen!2sin!4v1649308478934!5m2!1sen!2sin">
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</body>
+
+</html>
