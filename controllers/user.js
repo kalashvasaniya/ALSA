@@ -2,17 +2,20 @@ const express = require("express");
 const app = express();
 let passport = require("passport");
 let LocalStrategy = require("passport-local");
-let crypto = require("crypto");
 const User = require("../models/user");
-const path = require("path");
-// app.set("view engine", "ejs");
-// app.set("views", path.join(__dirname, "../static/views"));
 exports.test = async (req, res, next) => {
   res.send("test successfull");
 };
 exports.signup = async (req, res, next) => {
   try {
     res.render("signup.ejs");
+  } catch (error) {
+    console.log(error);
+  }
+};
+exports.login = async (req, res, next) => {
+  try {
+    res.render("signin.ejs");
   } catch (error) {
     console.log(error);
   }
@@ -29,9 +32,9 @@ exports.signupPOST = async (req, res, next) => {
     }
     const user = await User.create(req.body);
     console.log(user);
-    res.status(501).send("User created");
+    res.status(501).render("index.ejs");
   } catch (error) {
     console.log(error);
-    res.status(401).send("Error Occureured");
+    res.status(401).render("error.ejs");
   }
 };
