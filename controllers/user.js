@@ -3,6 +3,8 @@ const app = express();
 let passport = require("passport");
 let LocalStrategy = require("passport-local");
 const User = require("../models/user");
+const bcrypt = require("bcrypt");
+const cookieToken = require("../utils/cookieToken");
 exports.test = async (req, res, next) => {
   res.send("test successfull");
 };
@@ -36,5 +38,26 @@ exports.signupPOST = async (req, res, next) => {
   } catch (error) {
     console.log(error);
     res.status(401).render("error.ejs");
+  }
+};
+exports.loginPOST = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      throw new Error("Email and Password is Required");
+    }
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new Error("Email and Password are invalid");
+    }
+    const compareResult = await bcrypt.compare(password, user.password);
+
+    if (!compareResult) {
+      throw new Error("Email and Password are invalid");
+    }
+    cookieToken(user, res);
+  } catch (error) {
+    console.log(error);
+    res.status(404).render("error");
   }
 };
