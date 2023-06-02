@@ -8,6 +8,7 @@ const path = require("path");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./static/views"));
 const bodyParser = require("body-parser");
+app.use( express.static( "public" ) );
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //Setting up DB
