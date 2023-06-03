@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title>Map</title>
-  </head>
+</head>
 
-  <body class="bg-black">
+<body class="bg-black">
     <div class="flex items-center justify-center px-6 mt-6 mx-auto">
-      <a
-        href="/"
-        class="flex items-center mb-6 text-2xl font-semibold text-white"
-      >
-        <img class="w-8 h-8 mr-2" src="/ALSA1.jpeg" alt="logo" />
-        ALSA
-      </a>
+        <a href="/" class="flex items-center mb-6 text-2xl font-semibold text-white">
+            <img class="w-8 h-8 mr-2" src="/ALSA1.jpeg" alt="logo" />
+            ALSA
+        </a>
     </div>
 
     <!-- drawer init and show -->
-    <div class="flex justify-between md:px-28 p-5">
+    <!-- <div class="flex justify-between md:px-28 p-5">
       <nav class="text-center">
         <button
           class="flex items-start p-2 text-sm text-black hidden md:block rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -65,108 +57,83 @@
           Nearest EV Station
         </button>
       </div>
-    </div>
+    </div> -->
 
     <!-- drawer component -->
     <div class="md:grid md:grid-cols-2 px-6">
-      <div class="px-24 mt-12">
-        <h5
-          id="drawer-navigation-label"
-          class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
-        >
-          ALSA
-        </h5>
-        <button
-          type="button"
-          data-drawer-hide="drawer-navigation"
-          aria-controls="drawer-navigation"
-          class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center hover:bg-gray-600 hover:text-white"
-        >
-          <span class="sr-only">Close menu</span>
-        </button>
-        <div class="py-4 overflow-y-auto">
-          <ul class="space-y-2 font-medium">
-            <hr />
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
-              >
-                <span class="ml-3">Q-854, Katpadi, Vellore, TamilNadu</span>
-                <br />
-                <span
-                  class="ml-5 text-sm underline underline-offset-4 text-blue-600"
-                  >Price: 50₹ / 30min</span
-                >
-              </a>
-            </li>
-            <hr />
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
-              >
-                <span class="ml-3">A-19 Mahi Nagar, Jaipur, Rajasthan</span>
-                <br />
-                <span
-                  class="ml-5 text-sm underline underline-offset-4 text-blue-600"
-                  >Price: 35₹ / 20min</span
-                >
-              </a>
-            </li>
-            <hr />
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
-              >
-                <span class="ml-3">Sector-8, Mumbai, Maharastra</span>
-                <br />
-                <span
-                  class="ml-5 text-sm underline underline-offset-4 text-blue-600"
-                  >Price: 60₹ / 50min</span
-                >
-              </a>
-            </li>
-            <hr />
-          </ul>
+        <div class="px-24 mt-12">
+            <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+                ALSA
+            </h5>
+            <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center hover:bg-gray-600 hover:text-white">
+                <span class="sr-only">Close menu</span>
+            </button>
+            <div class="py-4 overflow-y-auto">
+                <ul class="space-y-2 font-medium">
+                    <hr />
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                            <span class="ml-3">Q-854, Katpadi, Vellore, TamilNadu</span>
+                            <br />
+                            <span class="ml-5 text-sm underline underline-offset-4 text-blue-600">Price: 50₹ /
+                                30min</span>
+                        </a>
+                    </li>
+                    <hr />
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                            <span class="ml-3">A-19 Mahi Nagar, Jaipur, Rajasthan</span>
+                            <br />
+                            <span class="ml-5 text-sm underline underline-offset-4 text-blue-600">Price: 35₹ /
+                                20min</span>
+                        </a>
+                    </li>
+                    <hr />
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700">
+                            <span class="ml-3">Sector-8, Mumbai, Maharastra</span>
+                            <br />
+                            <span class="ml-5 text-sm underline underline-offset-4 text-blue-600">Price: 60₹ /
+                                50min</span>
+                        </a>
+                    </li>
+                    <hr />
+                </ul>
+            </div>
         </div>
-      </div>
 
-      <div
-        class="container flex justify-between items-center px-6 mx-auto w-full mb-6"
-      >
-        <section class="w-full">
-          <div class="mt-6">
-            <!-- Tailblocks -->
-            <section class="text-gray-400 bg-slate-900 relative rounded-xl">
-              <div class="container px-4 py-6 mx-auto">
-                <div
-                  class="bg-slate-900 rounded-lg overflow-hidden flex items-end justify-start relative"
-                >
-                  <div id="map" style="width: 1400px; height: 600px"></div>
+        <div class="container flex justify-between items-center px-6 mx-auto w-full mb-6">
+            <section class="w-full">
+                <div class="mt-6">
+                    <!-- Tailblocks -->
+                    <section class="text-gray-400 bg-slate-900 relative rounded-xl">
+                        <div class="container px-4 py-6 mx-auto">
+                            <div class="bg-slate-900 rounded-lg overflow-hidden flex items-end justify-start relative">
+                                <div id="map" style="width: 1400px; height: 600px"></div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-              </div>
             </section>
-          </div>
-        </section>
-      </div>
+        </div>
     </div>
 
     <script>
-      mapboxgl.accessToken =
-        "pk.eyJ1IjoiZGhhcmFuc2huZWVtYSIsImEiOiJjbGlmNDVyZzExNms2M2tuYmJ6a29rNTRtIn0.cjCinyijpfYRIsCRyqGgVg";
-      const map = new mapboxgl.Map({
-        container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v12", // style URL
-        center: [79.1559, 12.9692], // starting position [lng, lat]
-        zoom: 15, // starting zoom
-      });
+        mapboxgl.accessToken =
+            "pk.eyJ1IjoiZGhhcmFuc2huZWVtYSIsImEiOiJjbGlmNDVyZzExNms2M2tuYmJ6a29rNTRtIn0.cjCinyijpfYRIsCRyqGgVg";
+        const map = new mapboxgl.Map({
+            container: "map", // container ID
+            style: "mapbox://styles/mapbox/streets-v12", // style URL
+            center: [79.1559, 12.9692], // starting position [lng, lat]
+            zoom: 15, // starting zoom
+        });
     </script>
 
     <script src="/static/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-  </body>
+</body>
+
 </html>
