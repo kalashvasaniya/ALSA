@@ -15,26 +15,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
       rel="stylesheet"
     />
-    <style>
-      .marker {
-        background-image: url("mapbox-icon.png");
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-      }
-    </style>
     <title>Map</title>
   </head>
 
   <body class="bg-black">
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
-      type="text/css"
-    />
+    <div class="flex items-center justify-center px-6 mt-6 mx-auto">
+      <a
+        href="/"
+        class="flex items-center mb-6 text-2xl font-semibold text-white"
+      >
+        <img class="w-8 h-8 mr-2" src="/ALSA1.jpeg" alt="logo" />
+        ALSA
+      </a>
+    </div>
+
     <!-- drawer init and show -->
     <div class="flex justify-between md:px-28 p-5">
       <nav class="text-center">
@@ -74,105 +68,89 @@
     </div>
 
     <!-- drawer component -->
-    <div
-      id="drawer-navigation"
-      class="fixed top-0 left-0 z-40 w-80 md:w-96 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-gray-800"
-      tabindex="-1"
-      aria-labelledby="drawer-navigation-label"
-    >
-      <h5
-        id="drawer-navigation-label"
-        class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
-      >
-        ALSA
-      </h5>
-      <button
-        type="button"
-        data-drawer-hide="drawer-navigation"
-        aria-controls="drawer-navigation"
-        class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center hover:bg-gray-600 hover:text-white"
-      >
-        <svg
-          aria-hidden="true"
-          class="w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
+    <div class="md:grid md:grid-cols-2 px-6">
+      <div class="px-24 mt-12">
+        <h5
+          id="drawer-navigation-label"
+          class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
         >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-        <span class="sr-only">Close menu</span>
-      </button>
-      <div class="py-4 overflow-y-auto">
-        <ul class="space-y-2 font-medium">
-          <hr />
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
-            >
-              <span class="ml-3">Q-854, Katpadi, Vellore, TamilNadu</span>
-              <br />
-              <span
-                class="ml-5 text-sm underline underline-offset-4 text-blue-600"
-                >Price: 50$/30min</span
+          ALSA
+        </h5>
+        <button
+          type="button"
+          data-drawer-hide="drawer-navigation"
+          aria-controls="drawer-navigation"
+          class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center hover:bg-gray-600 hover:text-white"
+        >
+          <span class="sr-only">Close menu</span>
+        </button>
+        <div class="py-4 overflow-y-auto">
+          <ul class="space-y-2 font-medium">
+            <hr />
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
               >
-            </a>
-          </li>
-          <hr />
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
-            >
-              <span class="ml-3">A-19 Mahi Nagar, Jaipur, Rajasthan</span>
-              <br />
-              <span
-                class="ml-5 text-sm underline underline-offset-4 text-blue-600"
-                >Price: 35$/20min</span
+                <span class="ml-3">Q-854, Katpadi, Vellore, TamilNadu</span>
+                <br />
+                <span
+                  class="ml-5 text-sm underline underline-offset-4 text-blue-600"
+                  >Price: 50₹ / 30min</span
+                >
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
               >
-            </a>
-          </li>
-          <hr />
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
-            >
-              <span class="ml-3">Sector-8, Mumbai, Maharastra</span>
-              <br />
-              <span
-                class="ml-5 text-sm underline underline-offset-4 text-blue-600"
-                >Price: 60$/50min</span
+                <span class="ml-3">A-19 Mahi Nagar, Jaipur, Rajasthan</span>
+                <br />
+                <span
+                  class="ml-5 text-sm underline underline-offset-4 text-blue-600"
+                  >Price: 35₹ / 20min</span
+                >
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700"
               >
-            </a>
-          </li>
-          <hr />
-        </ul>
-      </div>
-    </div>
-
-    <div
-      class="container flex justify-between items-center px-6 mx-auto w-full mb-6"
-    >
-      <section class="w-full">
-        <div class="mt-6">
-          <!-- Tailblocks -->
-          <section class="text-gray-400 bg-slate-900 relative rounded-xl">
-            <div class="container px-4 py-6 mx-auto">
-              <div
-                class="bg-slate-900 rounded-lg overflow-hidden flex items-end justify-start relative"
-              >
-                <div id="map" style="width: 1400px; height: 600px"></div>
-              </div>
-            </div>
-          </section>
+                <span class="ml-3">Sector-8, Mumbai, Maharastra</span>
+                <br />
+                <span
+                  class="ml-5 text-sm underline underline-offset-4 text-blue-600"
+                  >Price: 60₹ / 50min</span
+                >
+              </a>
+            </li>
+            <hr />
+          </ul>
         </div>
-      </section>
+      </div>
+
+      <div
+        class="container flex justify-between items-center px-6 mx-auto w-full mb-6"
+      >
+        <section class="w-full">
+          <div class="mt-6">
+            <!-- Tailblocks -->
+            <section class="text-gray-400 bg-slate-900 relative rounded-xl">
+              <div class="container px-4 py-6 mx-auto">
+                <div
+                  class="bg-slate-900 rounded-lg overflow-hidden flex items-end justify-start relative"
+                >
+                  <div id="map" style="width: 1400px; height: 600px"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
     </div>
 
     <script>
@@ -180,18 +158,12 @@
         "pk.eyJ1IjoiZGhhcmFuc2huZWVtYSIsImEiOiJjbGlmNDVyZzExNms2M2tuYmJ6a29rNTRtIn0.cjCinyijpfYRIsCRyqGgVg";
       const map = new mapboxgl.Map({
         container: "map", // container ID
-        style: "mapbox://styles/mapbox/light-v11", // style URL
+        style: "mapbox://styles/mapbox/streets-v12", // style URL
         center: [79.1559, 12.9692], // starting position [lng, lat]
         zoom: 15, // starting zoom
       });
-      map.addControl(
-        new MapboxGeocoder({
-          accessToken:
-            "pk.eyJ1IjoiZGhhcmFuc2huZWVtYSIsImEiOiJjbGlmNDVyZzExNms2M2tuYmJ6a29rNTRtIn0.cjCinyijpfYRIsCRyqGgVg",
-          mapboxgl: mapboxgl,
-        })
-      );
     </script>
+
     <script src="/static/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
