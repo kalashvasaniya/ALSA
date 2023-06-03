@@ -68,7 +68,9 @@ exports.loginPOST = async (req, res, next) => {
     res.status(404).render("error");
   }
 };
-
+exports.findCharginStation = async (req, res, next) => {
+  res.render("map.ejs");
+};
 exports.requiredCharge = async (req, res, next) => {
   try {
     const result = await geoCoder
