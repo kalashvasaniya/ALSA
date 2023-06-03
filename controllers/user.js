@@ -62,7 +62,7 @@ exports.loginPOST = async (req, res, next) => {
     if (!compareResult) {
       throw new Error("Email and Password are invalid");
     }
-    cookieToken(user, res);
+    cookieToken(user, res, "map");
   } catch (error) {
     console.log(error);
     res.status(404).render("error");
