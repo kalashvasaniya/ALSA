@@ -2,3 +2,6 @@ node_modules
 package-lock.json
 package.json
 particles.json
+tailwind.config.js 
+.DS_store
+.vscode
